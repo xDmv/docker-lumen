@@ -1,4 +1,4 @@
-version: '3'
+version: '1'
 services:
   ### PHP-FPM Container
   php-fpm:
@@ -18,8 +18,8 @@ services:
       - ./logs/nginx/:/var/log/nginx
       - ./src:/var/www
     ports:
-      - "80:80"
-      - "443:443"
+      - "15080:80"
+      - "150443:443"
     links:
       - php-fpm
 
@@ -29,12 +29,12 @@ services:
     volumes:
       - /var/lib/mysql
     expose:
-      - "3306"
+      - "3308"
     environment:
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASS}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MYSQL_DATABASE: lumen
+      MYSQL_USER: daemon
+      MYSQL_PASSWORD: 61a00XolJO4567r
+      MYSQL_ROOT_PASSWORD: 123456
 
   ### Redis Container
   redis:

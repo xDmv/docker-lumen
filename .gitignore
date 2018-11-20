@@ -47,8 +47,9 @@ fabric.properties
 
 .idea/
 
+src/.env.example
 .env
-
+.env.example
 logs
 
 docker-compose.override.yaml
