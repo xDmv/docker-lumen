@@ -9,7 +9,7 @@ kill:
 	docker-compose kill && docker-compose rm -vf
 
 up:
-	docker-compose up -d --remove-orphans
+	docker-compose up -d --build
 
 status:
 	docker-compose ps

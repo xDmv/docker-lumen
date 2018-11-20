@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 services:
   ### PHP-FPM Container
   php-fpm:
@@ -19,7 +19,7 @@ services:
       - ./src:/var/www
     ports:
       - "15080:80"
-      - "150443:443"
+      - "15443:443"
     links:
       - php-fpm
 
