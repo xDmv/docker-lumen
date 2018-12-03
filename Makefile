@@ -1,15 +1,12 @@
 SHELL  := /bin/bash
 
-init: up
-	git submodule init && git submodule update
-
 restart: kill up status
 
 kill:
 	docker-compose kill && docker-compose rm -vf
 
 up:
-	docker-compose up -d --build
+	docker-compose up -d
 
 status:
 	docker-compose ps
@@ -22,3 +19,12 @@ pull:
 
 nginx-conf-reload:
 	docker-compose exec nginx bash -c 'nginx -t && nginx -s reload'
+
+stop:
+	docker-compose stop
+
+up1:
+	docker-compose up -d --build
+
+php-docker:
+	docker exec -i -t mylumen-docker_workspace_1 /bin/bash

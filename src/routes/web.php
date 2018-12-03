@@ -12,5 +12,10 @@
 */
 
 $app->get('/', function () use ($app) {
+    //echo "I can do job whis lumen!<br> Version:";
     return $app->version();
+});
+$app->get('/adminer/', function () {
+    //echo "I can do job whis lumen!<br> Version:";
+    return view('adminer');
 });
